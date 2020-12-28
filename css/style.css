@@ -1,0 +1,441 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*End of CSS Reset*/
+
+*{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+body{
+	font-family: "Microsoft JhengHei";
+}
+
+.wrap{
+	width: 1000px;
+	margin: 0 auto;
+	background: #fafafa;
+}
+
+.header, .skills, .experience, .works, .aboutme{
+	margin-bottom: 100px;
+}
+
+a{
+	text-decoration: none;
+}
+
+h2{
+	margin-bottom: 20px;
+}
+
+
+/* header section */
+.header{
+	background-image: url(../img/img-headerShape.png);
+	height: 390px;
+	padding: 120px 150px 0px 150px;
+}
+
+.portrait{
+	float: left;
+	text-align: center;
+}
+
+.portrait h1{
+	height: 151px;
+	background-image: url(../img/jobs.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: 101%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.portrait h2{
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.portrait p{
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.contact-info{
+	float: left;
+	margin-left: 100px;
+	padding-top: 10px;
+}
+
+.contact-info li,
+.contact-info a{
+	color: #fff;
+	margin-bottom: 15px;
+	font-size: 16px;
+}
+
+.contact-info a:hover{
+	border-bottom: 1px dashed #fff;
+}
+
+.fa{
+	margin-right: 10px;
+}
+
+
+
+
+
+/* skills section */
+.h-blue{
+	font-weight: bold;
+	text-align: center;
+	font-size: 24px;
+	color: #1736DC;
+}
+
+.h-pink{
+	font-weight: bold;
+	text-align: center;
+	font-size: 24px;
+	color: #FB56BF;
+}
+
+.skill-list{
+	margin: 20px;
+	display: flex;
+
+	/* 在父元素skill-list加入下列兩行以清除浮動 */
+	/* 參考 《HTML&CSS 網站設計建置優化之道》 書中的作法 */
+	overflow: auto;
+	width: 100%;
+}
+
+.skill-list>li{
+	float: left;
+	margin: 10px;
+	width: 300px;
+	background: #fff;
+	text-align: center;
+	padding: 30px 40px;
+	border-radius: 10px;
+	border-bottom: 10px solid;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+.skill-list>li li{
+	text-align: left;
+	list-style-type: disc;
+	list-style-position: inside;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.skill-list>li img, .skill-list>li h3{
+	margin-bottom: 20px;
+}
+
+.skill-list>li h3{
+	font-weight: bold;
+}
+
+.skill-list>.web{
+	border-color: #F58D23;
+}
+
+.skill-list>.js{
+	border-color: #539E43;
+}
+
+.skill-list>.dev{
+	border-color: #6762A6;
+}
+
+
+
+
+/* experience section（時間軸） */
+.timeline{
+	position: relative;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+.timeline::before{
+	content: url(../img/dot-start.png);
+	position: absolute;
+	
+	/* 讓圖形距離父容器左邊界50%，這樣會是圖形的左邊界對齊父容器的中央 */
+	left: 50%;
+	top: 0;
+
+	/* 再將圖形往左位移50%，就可以使圖形的正中央置中 */
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.timeline::after{
+	content: '';
+	width: 46px;
+	height: 4px;
+	background: #D8D8D8;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	border-radius: 2px;
+}
+
+.timeline li{
+	/* 設定li的寬度只有2px並置中，作為時間軸 */
+	width: 2px;
+	margin: 0 auto;
+	
+	background: #D8D8D8;
+	position: relative;
+	padding-bottom: 20px;
+}
+
+.timeline li:first-child{
+	padding-top: 80px;
+}
+
+.timeline li:last-child{
+	padding-bottom: 80px;
+}
+
+/*  利用偽元素及絕對定位製作時間軸上的節點 */
+.timeline li::before{
+	content: url(../img/dot-timeItem.png);
+	position: absolute;
+	left: 50%;
+	top: 0;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	
+	z-index: 3;
+}
+
+.timeline li:first-child::before{
+	top: 80px;
+}
+
+.direction-r,
+.direction-l{
+	position: relative;
+	width: 300px;
+	height: 150px;
+	top: 0;
+	left: 0;
+	background: #fff;
+	border: 1px solid #FB56BF;
+	border-radius: 10px;
+	margin-left: 25px;
+	font-size: 14px;
+	padding: 10px;
+}
+
+.direction-r:hover,
+.direction-l:hover{
+	background: #f6e6e9;
+	cursor: crosshair;
+}
+
+.direction-l{
+	margin-left: -324px;
+	text-align: right;
+}
+
+.duration,
+.company{
+	color: #4A4A4A;
+	letter-spacing: 0.53px;
+	margin-bottom: 10px;
+}
+
+.duration{
+	font-weight: bold;
+}
+
+.position{
+	color: #8A1737;
+	font-weight: bold;
+	letter-spacing: 0.53px;
+	margin-bottom: 10px;
+}
+
+.desc{
+	color: #9B9B9B;
+	letter-spacing: 0.44px;
+	line-height: 18px;
+}
+
+
+
+
+/* works section */
+.work-list{
+	margin: 20px;
+	display: flex;
+
+	/* 在父元素skill-list加入下列兩行以清除浮動 */
+	/* 參考 《HTML&CSS 網站設計建置優化之道》 書中的作法 */
+	overflow: auto;
+	width: 100%;
+}
+
+.work-list>li{
+	float: left;
+	margin: 10px;
+	width: 300px;
+	background: #fff;
+	border-radius: 4px;
+}
+
+.work-list>li:hover{
+	-webkit-box-shadow: none;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.40);
+}
+
+.work-list>li>a{
+	display: block;
+	width: 300px;
+	height: 150px;
+}
+
+.work1>a{
+	/*background-color: #fdb4e3;
+	background-image: url(../img/logo-work-1.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;*/
+	background: #fdb4e3 url(../img/logo-work-1.png) no-repeat right bottom;
+}
+
+.work2>a{
+	/*background-color: #424242;
+	background-image: url(../img/logo-work-2.png);
+	background-repeat: no-repeat;
+	background-position: center;*/
+	background: #424242 url(../img/logo-work-2.png) no-repeat center;
+}
+
+.work3>a{
+	/*background-color: #8AD7FA;
+	background-image: url(../img/logo-work-3.png);
+	background-repeat: no-repeat;
+	background-position: center;*/
+	background: #8AD7FA url(../img/logo-work-3.png) no-repeat center center;
+}
+
+.work-list h3,
+.work-list p{
+	padding: 10px;
+}
+
+.work-list h3{
+	font-weight: bold;
+}
+
+.work-list h3 a{
+	color: #000;
+}
+
+.work-list h3 a:hover{
+	color: #FB56BF;
+}
+
+
+
+/* aboutme section */
+.bio{
+	padding: 10px 100px;
+	overflow: auto;
+	width: 100%;
+}
+
+.bio img{
+	float: left;
+	margin-right: 40px;
+	box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.40);
+}
+
+.bio p{
+	margin-left: 300px;
+	margin-top: 30px;
+	line-height: 26px;
+}
+
+
+
+
+/* footer section */
+.footer{
+	background-image: url(../img/footer-bg.png);
+	height: 85px;
+	line-height: 85px;
+}
+
+.footer p{
+	text-align: center;
+	text-transform: uppercase;
+}
